@@ -1,3 +1,6 @@
+import 'package:demo/screens/home.dart';
+import 'package:demo/screens/navigation.dart';
+import 'package:demo/screens/restaurant%20_details/restaurant_page.dart';
 import 'package:demo/screens/welcome/login.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -378,7 +381,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                            width: 150,
                            height: 50,
                            child: ElevatedButton(
-                             onPressed: (){}, 
+                             onPressed: (){
+                               Navigator.push(context, MaterialPageRoute(builder: (_)=>NavigationScreen()));
+                             }, 
                              child: Text("Continue"),
                               style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(

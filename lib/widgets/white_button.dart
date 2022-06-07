@@ -6,7 +6,7 @@ class WhiteButton extends StatelessWidget {
   final Color?color;
   final VoidCallback? onTap;
   final VoidCallback?style;
-  final Image?image;
+  final String?image;
   const WhiteButton({
     Key? key,
     this.icon,
@@ -19,7 +19,7 @@ class WhiteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 350,
+      width: double.infinity,
       height:50 ,
       child: ElevatedButton(
         onPressed: (){}, 

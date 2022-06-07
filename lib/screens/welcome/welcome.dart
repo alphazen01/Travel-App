@@ -99,7 +99,7 @@ class Welcome extends StatelessWidget {
                             primary: Color(0xff08BA64)
                           ),
                         ),
-                        )
+                        ),
                      
                         ],
                       ),

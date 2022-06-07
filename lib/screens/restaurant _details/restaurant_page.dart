@@ -1,6 +1,9 @@
 import 'dart:ui';
 
+import 'package:demo/screens/restaurant%20_details/all_discount.dart';
+import 'package:demo/screens/restaurant%20_details/vendor_details.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class RestaurantScreen extends StatelessWidget {
   const RestaurantScreen({ Key? key }) : super(key: key);
@@ -84,9 +87,9 @@ class RestaurantScreen extends StatelessWidget {
                 offset: Offset(0, -20),
                 child: Container(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height,
+                  height: MediaQuery.of(context).size.height/1.62,
                   decoration: BoxDecoration(
-                    color: Color(0xffF7F7F7),
+                    color: Color(0xffE5E5E5),
                     borderRadius:BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20)
@@ -98,11 +101,42 @@ class RestaurantScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          SizedBox(height: 20,),
                          Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                            children: [
-                             Icon(Icons.star,color: Colors.yellowAccent,),
-                             Image.asset("assets/facebook.png",scale: 4,)
+                             RatingBar.builder(
+                              itemSize: 25,
+                              initialRating: 3,
+                              minRating: 1,
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                              itemBuilder: (context, _) => Icon(
+                                Icons.star,size: 5,
+                                color: Color(0xffF3603F),
+                              ),
+                              onRatingUpdate: (rating) {
+                                print(rating);
+                              },
+                            ),
+                             Row(
+                               
+                               children: [
+                                 CircleAvatar(
+                                   radius: 25,
+                                   backgroundColor: Colors.white,
+                                   child: Image.asset("assets/youtube.png",)
+                                   ),
+                                   SizedBox(width: 10,),
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundColor: Colors.white,
+                                    child: Image.asset("assets/youtube_with.png",)
+                               ),
+                               ],
+                             ),
                            ],
                          ) ,
                          Column(
@@ -157,75 +191,59 @@ class RestaurantScreen extends StatelessWidget {
                            children: [
                              Column(
                                children: [
-                                 Card(
-                                   shape:RoundedRectangleBorder(
-                                     borderRadius:BorderRadius.circular(16), 
-                                     ) ,
-                                   elevation: 5,
-                                   child: SizedBox(
-                                     width: 80,
-                                     height: 65,
-                                     child: ElevatedButton(
-                                       onPressed: (){}, 
-                                       child: Icon(Icons.menu_book,color: Colors.grey,),
-                                       style: ElevatedButton.styleFrom(
-                                         shape: RoundedRectangleBorder(
-                                           borderRadius:BorderRadius.circular(16), 
-                                          ),
-                                          primary: Colors.white
-                                       ),
-                                      ),
-                                   ),
+                                 SizedBox(
+                                   width: 80,
+                                   height: 65,
+                                   child: ElevatedButton(
+                                     onPressed: (){}, 
+                                     child: Icon(Icons.menu_book,color: Colors.grey,),
+                                     style: ElevatedButton.styleFrom(
+                                       shape: RoundedRectangleBorder(
+                                         borderRadius:BorderRadius.circular(16), 
+                                        ),
+                                        primary: Colors.white
+                                     ),
+                                    ),
                                  ),
                                  Text("Menu")
                                ],
                              ),
                              Column(
                                children: [
-                                 Card(
-                                   elevation: 5,
-                                    shape:RoundedRectangleBorder(
-                                     borderRadius:BorderRadius.circular(16), 
-                                     ) ,
-                                   child: SizedBox(
-                                     width: 80,
-                                     height: 65,
-                                     child: ElevatedButton(
-                                       onPressed: (){}, 
-                                       child: Icon(Icons.phone,color: Colors.grey,),
-                                       style: ElevatedButton.styleFrom(
-                                         shape: RoundedRectangleBorder(
-                                           borderRadius:BorderRadius.circular(16) 
-                                          ),
-                                          primary: Colors.white
-                                       ),
-                                      ),
-                                   ),
+                                 SizedBox(
+                                   width: 80,
+                                   height: 65,
+                                   child: ElevatedButton(
+                                     onPressed: (){}, 
+                                     child: Icon(Icons.phone,color: Colors.grey,),
+                                     style: ElevatedButton.styleFrom(
+                                       shape: RoundedRectangleBorder(
+                                         borderRadius:BorderRadius.circular(16) 
+                                        ),
+                                        primary: Colors.white
+                                     ),
+                                    ),
                                  ),
                                  Text("Contact")
                                ],
                              ),
                              Column(
                                children: [
-                                 Card(
-                                   elevation: 5,
-                                    shape:RoundedRectangleBorder(
-                                     borderRadius:BorderRadius.circular(16), 
-                                     ) ,
-                                   child: SizedBox(
-                                     width: 80,
-                                     height: 65,
-                                     child: ElevatedButton(
-                                       onPressed: (){}, 
-                                       child: Image.asset("assets/online_order.png"),
-                                       style: ElevatedButton.styleFrom(
-                                         shape: RoundedRectangleBorder(
-                                           borderRadius:BorderRadius.circular(16) 
-                                          ),
-                                          primary: Colors.white
-                                       ),
-                                      ),
-                                   ),
+                                 SizedBox(
+                                   width: 80,
+                                   height: 65,
+                                   child: ElevatedButton(
+                                     onPressed: (){
+                                       
+                                     }, 
+                                     child: Image.asset("assets/online_order.png"),
+                                     style: ElevatedButton.styleFrom(
+                                       shape: RoundedRectangleBorder(
+                                         borderRadius:BorderRadius.circular(16) 
+                                        ),
+                                        primary: Colors.white
+                                     ),
+                                    ),
                                  ),
                                  Text("Order Online")
                                ],
@@ -239,7 +257,7 @@ class RestaurantScreen extends StatelessWidget {
                              
                               child: ElevatedButton(
                               onPressed: (){
-                               
+                               Navigator.push(context, MaterialPageRoute(builder: (_)=>VendorDetailsScreen()));
                               }, 
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
