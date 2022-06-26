@@ -3,13 +3,11 @@
 import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:demo/screens/restaurant%20_details/chechk.dart';
 import 'package:demo/screens/restaurant%20_details/restaurant_page.dart';
 import 'package:demo/screens/restaurant%20_details/vendor_details.dart';
-import 'package:demo/screens/welcome/social_logo.dart';
-import 'package:demo/screens/welcome/welcome.dart';
+import 'package:demo/screens/auth/social_logo.dart';
+import 'package:demo/screens/home/welcome.dart';
 import 'package:demo/widgets/custom_container_room.dart';
-import 'package:demo/widgets/white_button.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -408,13 +406,13 @@ you wanna go?""",
                    itemBuilder: (BuildContext, index){
                      return 
                         Container(
-                    width: double.infinity,
-                    height: 120,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
+                        width: double.infinity,
+                        height: 120,
+                        decoration: BoxDecoration(
+                        color:Colors.white,
                         borderRadius: BorderRadius.circular(16)
-                    ),
-                    child: Row(
+                        ),
+                        child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           image[index],
@@ -525,151 +523,23 @@ you wanna go?""",
                           
                           
                         ],
-                    ),
-                    
-                  );  
+                                          ),
+                                          
+                                        );  
                    },
                    separatorBuilder: (BuildContext,index){
                      return SizedBox(height: 10,);
                    },
-                  ),
-     
-    // Container(
-    //   width: double.infinity,
-    //   height: 120,
-    //   decoration: BoxDecoration(
-    //     color: Colors.white,
-    //     borderRadius: BorderRadius.circular(16)
-    //   ),
-    //   child: Row(
-    //     crossAxisAlignment: CrossAxisAlignment.start,
-    //     children: [
-    //       Image.asset("assets/facebook.png"),
-    //       Padding(
-    //         padding: const EdgeInsets.symmetric(horizontal: 5),
-    //         child: Row(
-    //           children: [
-    //             Container(
-    //               width: MediaQuery.of(context).size.width/2.7,
-    //               child: Column(
-    //                 crossAxisAlignment: CrossAxisAlignment.start,
-    //                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    //                 children: [
-    //                     Text(
-    //                    hotelName[index],
-    //                    style: TextStyle(
-    //                      fontSize: 20,
-    //                      fontWeight: FontWeight.w700
-    //                    ),
-    //                  ),
-    //                  Row(
-    //                    children: [
-    //                      Icon(Icons.location_on),
-    //                      Text(
-    //                        "Coxbazar",
-    //                        style: TextStyle(
-    //                          fontSize: 16,
-    //                          color: Colors.grey
-    //                        ),
-    //                      ),
-    //                    ],
-    //                  ),
-    //                   Row(
-    //                     children: [
-    //                       Text(
-    //                            "Hotel",
-    //                            style: TextStyle(
-                                
-    //                            ),
-    //                          ),
-    //                          SizedBox(width: 10,),
-    //                            Text(
-    //                        "Restaurent",
-    //                        style: TextStyle(
-                              
-    //                        ),
-    //                      ),
-    //                     ],
-    //                   ),
-                          
-    //                 ],
-    //               ),
-    //             ),
-    //           ],
-    //         ),
-    //       ),
-    //       Column(
-    //         mainAxisAlignment: MainAxisAlignment.spaceAround,
-    //         children: [
-    //           Stack(
-    //             children: [
-    //               Padding(
-    //                 padding: const EdgeInsets.only(left: 50),
-    //                 child: Image.asset("assets/discount_badge.png",scale: 1.1,),
-    //               ),
-    //                Positioned(
-    //                  top: 5,
-    //                  left: 50,
-    //                  child: Text(
-    //                    "50%",
-    //                    style: TextStyle(
-    //                      // fontWeight: FontWeight.w700,
-    //                      color: Colors.white,
-    //                    ),
-    //                  ),
-    //                ),
-    //             ],
-    //           ),
-    //             Column(
-    //            children: [
-    //              Text(
-    //               "50%",
-    //               style: TextStyle(
-    //                 // fontWeight: FontWeight.w700,
-    //                 color: Colors.white,
-    //               ),
-    //             ),
-    //              Text(
-    //          "60000 tk",
-    //          style: TextStyle(
-    //            fontSize: 20,
-    //            fontWeight: FontWeight.w700,
-    //            color: Color(0xff08BA64)
-    //          ),
-    //        ),
-    //          Text(
-    //          "12,000 tk",
-    //          style: TextStyle(
-    //            fontSize: 16,
-    //             decoration: TextDecoration.lineThrough,
-    //             color: Color(0xff08BA64)
-    //          ),
-    //        ),
-    //            ],
-    //          )
-    //         ],
-    //       ),
-          
-          
-    //     ],
-    //   ),
-      
-    // );
-                         
+                  ),    
                     )
-    
-    
-                          
-                 
-                 
-                          ],
-                        ),
-                      ),
-                    ),
-                    
-                  ],
+                    ],
+                  ),
                 ),
               ),
+              
+            ],
+          ),
+        ),
              
             
           ],

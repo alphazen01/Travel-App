@@ -1,7 +1,9 @@
 
 
 
-import 'package:demo/screens/welcome/social_logo.dart';
+import 'package:demo/screens/auth/social_logo.dart';
+import 'package:demo/screens/utilitis/button_color.dart';
+import 'package:demo/screens/utilitis/submit_button.dart';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatelessWidget {
@@ -50,7 +52,6 @@ class Welcome extends StatelessWidget {
                         ],
                       ),
                       Column(
-                        
                         children: [
                            Text(
                             "Make your travel simple.Get awesome deals and save more than 60% of travel cost! Enjoy youre Traveling!",textAlign: TextAlign.left,
@@ -74,39 +75,17 @@ class Welcome extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20)
                           ),
-                          child: ElevatedButton(
-                          onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=>SocialLogoScreen()));
-                          }, 
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                            
-                              Text(
-                                "Get Started",
-                                style: TextStyle(
-                                  fontSize: 18
-                                ),
-                              ),
-                              SizedBox(width: 10,),
-                              Icon(Icons.arrow_forward)
-                            ],
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            primary: Color(0xff08BA64)
-                          ),
+                          child:SubmitButton(
+                            onTap: (){},
+                            title: "Get Started",size:18 ,
+                            color: ButtonColor.submitButtonColor,
+                            icon:Icons.arrow_forward
+                          )
                         ),
-                        ),
-                     
                         ],
                       ),
-                     
                     ],
                   ),
-                  
                 ],
               ),
             ),

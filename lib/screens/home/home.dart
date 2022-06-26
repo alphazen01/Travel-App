@@ -3,10 +3,12 @@
 
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:demo/screens/auth/login.dart';
+import 'package:demo/screens/restaurant%20_details/offer/offer_page.dart';
 import 'package:demo/screens/restaurant%20_details/restaurant_page.dart';
 import 'package:demo/screens/restaurant%20_details/vendor_details.dart';
 import 'package:demo/screens/search.dart';
-import 'package:demo/screens/welcome/social_logo.dart';
+import 'package:demo/screens/auth/social_logo.dart';
 import 'package:demo/widgets/custom_container_room.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -19,6 +21,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool onPressed=false;
   
   
    List<String>sImage=[
@@ -34,7 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffE5E5E5),
-        body: SingleChildScrollView(
+        body:
+        onPressed==false? SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
@@ -102,41 +106,41 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 10,),
                 Row(
                   children: [
-                    Container(
-                    width: 290,
-                    height: 50,
-                    child: TextFormField(
-                                                  
-                      decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            suffixIcon: Icon(
-                              Icons.arrow_forward,
-                              color: Color(0xff08BA64),
-                              size: 30,
-                            ),
-                            labelStyle: TextStyle(color: Colors.white,),
-                            hintText: "Where do you wanna go?",
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          border: OutlineInputBorder(
-                            
-                            borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      disabledBorder: InputBorder.none,
-                        focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(16),
-                      ),                      
+                    Expanded(
+                      child: Container(
+                      width: 290,
+                      height: 50,
+                      child: TextFormField(                           
+                        decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              suffixIcon: Icon(
+                                Icons.arrow_forward,
+                                color: Color(0xff08BA64),
+                                size: 30,
+                              ),
+                              labelStyle: TextStyle(color: Colors.white,),
+                              hintText: "Where do you wanna go?",
+                              hintStyle: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        disabledBorder: InputBorder.none,
+                          focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(16),
+                        ),                      
+                          ),
                         ),
                       ),
                     ),
                      SizedBox(width: 10,),
                          InkWell(
                            onTap: (){
-                            
+                           
                            },
                            child: Container(
                               width: 80,
@@ -292,7 +296,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     InkWell(
-                      onTap: (){},
+                      onTap: (){
+                       setState(() {
+                         
+                           if (onPressed==false) {
+                               Navigator.push(context,
+                               MaterialPageRoute(builder: (context) => OfferScreen()));
+                              
+                            }
+                         
+                       });
+                      },
                       child: Icon(
                         Icons.arrow_forward,color: Colors.grey,
                         size: 30,
@@ -307,7 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       enlargeCenterPage: true,
                       viewportFraction: 0.85,   
                       ),
-                      items: List<Widget>.generate(2, (index) =>Image.asset(sImage[index%2]))
+                      items: List<Widget>.generate(3, (index) =>Image.asset(sImage[index%2]))
                     ),
                     Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -408,7 +422,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
                                 itemBuilder: (context, _) => Icon(
                                   Icons.star,size: 5,
-                                  color: Color(0xffF3603F),
+                                  color: Colors.orangeAccent
                                 ),
                                 onRatingUpdate: (rating) {
                                   print(rating);
@@ -483,6 +497,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+        ):Container(
+          height: 100,
+          width: 100,
+          color: Colors.red,
         ),
         
       ),
