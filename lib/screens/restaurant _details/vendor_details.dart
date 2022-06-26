@@ -1,10 +1,9 @@
 
-import 'package:demo/screens/restaurant%20_details/chechk.dart';
-import 'package:demo/widgets/custom_check.dart';
+
+import 'package:demo/screens/restaurant%20_details/offer/grab_offer.dart';
 import 'package:demo/widgets/custom_claimed.dart';
 import 'package:demo/widgets/custom_contact.dart';
 import 'package:demo/widgets/custom_container_room.dart';
-import 'package:demo/widgets/white_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -23,9 +22,10 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
    @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: Color(0xffE5E5E5),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
                 children: [
@@ -127,7 +127,7 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
                               itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
                               itemBuilder: (context, _) => Icon(
                                 Icons.star,size: 5,
-                                color: Color(0xffF3603F),
+                                color: Colors.orangeAccent
                               ),
                               onRatingUpdate: (rating) {
                                 print(rating);
@@ -304,33 +304,7 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
                         ),
                         
                          SizedBox(height: 20,),
-                          Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                  "Services",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w700
-                                  ),
-                                ),
-                                 SizedBox(height: 10,),
-                                   Row(
-                                     children: [
-                                       Icon(Icons.check,color:Color(0xff08BA64) ),
-                                       SizedBox(width: 10,),
-                                       Text(
-                                      "Laundry Service",
-                                      style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.grey
-                                      ),
-                                    ),
-                                     ],
-                                   ),
-                                ],
-                              ),
+                         
                           
                   
                         ],
@@ -338,7 +312,38 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
                     ),
                   ),
                 ),
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                  "Services",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700
+                  ),
+                ),
+                  SizedBox(height: 10,),
+                    Row(
+                      children: [
+                        Icon(Icons.check,color:Color(0xff08BA64) ),
+                        SizedBox(width: 10,),
+                        Text(
+                      "Laundry Service",
+                      style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey
+                      ),
+                    ),
+                      ],
+                    ),
+                ],
+            ),
+              ),
+                  SizedBox(height: 10,),
             
           ],
         ),
@@ -425,7 +430,7 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
           return Container(
             height: MediaQuery.of(context).size.height/2,
             width: double.infinity,
-           child: CustomCheck(),
+           child: GrabOffer(),
            
           );
         },

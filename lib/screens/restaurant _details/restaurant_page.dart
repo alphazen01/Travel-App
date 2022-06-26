@@ -11,7 +11,7 @@ class RestaurantScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: Color(0xffE5E5E5),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -83,217 +83,225 @@ class RestaurantScreen extends StatelessWidget {
         
                 ],
               ),
-              Transform.translate(
-                offset: Offset(0, -20),
-                child: Container(
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height/1.62,
-                  decoration: BoxDecoration(
-                    color: Color(0xffE5E5E5),
-                    borderRadius:BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20)
-                    ) 
-                  ),
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 20,),
-                         Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                           children: [
-                             RatingBar.builder(
-                              itemSize: 25,
-                              initialRating: 3,
-                              minRating: 1,
-                              direction: Axis.horizontal,
-                              allowHalfRating: true,
-                              itemCount: 5,
-                              itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-                              itemBuilder: (context, _) => Icon(
-                                Icons.star,size: 5,
-                                color: Color(0xffF3603F),
-                              ),
-                              onRatingUpdate: (rating) {
-                                print(rating);
-                              },
-                            ),
-                             Row(
-                               
-                               children: [
-                                 CircleAvatar(
-                                   radius: 25,
-                                   backgroundColor: Colors.white,
-                                   child: Image.asset("assets/youtube.png",)
-                                   ),
-                                   SizedBox(width: 10,),
-                                  CircleAvatar(
-                                    radius: 25,
-                                    backgroundColor: Colors.white,
-                                    child: Image.asset("assets/youtube_with.png",)
-                               ),
-                               ],
-                             ),
-                           ],
-                         ) ,
-                         Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text(
-                               "Tasty Restaurant",
-                               style: TextStyle(
-                                 fontSize: 20
-                               ),
-                             ),
-                             SizedBox(height: 10,),
-                             Row(
-                               children: [
-                                 Icon(Icons.location_on,color: Colors.grey),
-                                 Text(
-                                   "Dhaka",
-                                   style: TextStyle(
-                                     fontSize: 20,
-                                     color: Colors.grey
-                                   ),
-                                 ),
-                               ],
-                             ),
-                           ],
-                         ),
-                         SizedBox(height: 20,),
-                         Text(
-                            "Aura Raja Ampat Dive Resort is a hotel in a good neighborhood, which is located at...",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: (){}, 
-                            child: Text(
-                              "Read More..",
-                               style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey
-                            ),
-                            )
-                          ),
-                          SizedBox(height: 25,),
-                         Divider(
-                           thickness: 2,
-                         ),
-                          SizedBox(height: 25,),
-                         Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                           children: [
-                             Column(
-                               children: [
-                                 SizedBox(
-                                   width: 80,
-                                   height: 65,
-                                   child: ElevatedButton(
-                                     onPressed: (){}, 
-                                     child: Icon(Icons.menu_book,color: Colors.grey,),
-                                     style: ElevatedButton.styleFrom(
-                                       shape: RoundedRectangleBorder(
-                                         borderRadius:BorderRadius.circular(16), 
-                                        ),
-                                        primary: Colors.white
-                                     ),
-                                    ),
-                                 ),
-                                 Text("Menu")
-                               ],
-                             ),
-                             Column(
-                               children: [
-                                 SizedBox(
-                                   width: 80,
-                                   height: 65,
-                                   child: ElevatedButton(
-                                     onPressed: (){}, 
-                                     child: Icon(Icons.phone,color: Colors.grey,),
-                                     style: ElevatedButton.styleFrom(
-                                       shape: RoundedRectangleBorder(
-                                         borderRadius:BorderRadius.circular(16) 
-                                        ),
-                                        primary: Colors.white
-                                     ),
-                                    ),
-                                 ),
-                                 Text("Contact")
-                               ],
-                             ),
-                             Column(
-                               children: [
-                                 SizedBox(
-                                   width: 80,
-                                   height: 65,
-                                   child: ElevatedButton(
-                                     onPressed: (){
-                                       
-                                     }, 
-                                     child: Image.asset("assets/online_order.png"),
-                                     style: ElevatedButton.styleFrom(
-                                       shape: RoundedRectangleBorder(
-                                         borderRadius:BorderRadius.circular(16) 
-                                        ),
-                                        primary: Colors.white
-                                     ),
-                                    ),
-                                 ),
-                                 Text("Order Online")
-                               ],
-                             ),
-                           ],
-                         ),
-                          SizedBox(height: 25,),
-                              Container(
-                              width: double.infinity,
-                              height: 56,
-                             
-                              child: ElevatedButton(
-                              onPressed: (){
-                               Navigator.push(context, MaterialPageRoute(builder: (_)=>VendorDetailsScreen()));
-                              }, 
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                
-                                  Text(
-                                    "Claim 50% Discount",
-                                    style: TextStyle(
-                                      fontSize: 18
-                                    ),
-                                  ),
-                                  SizedBox(width: 10,),
-                                  Icon(Icons.arrow_forward)
-                                ],
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16),
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height/1.4,
+                color: Color(0xffE5E5E5),
+                // color: Colors.red,
+                child: Transform.translate(
+                  offset: Offset(0, -20),
+                  child: Container(
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height/1.62,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE5E5E5),
+                      borderRadius:BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20)
+                      ) 
+                    ),
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 20,),
+                           Row(
+                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                             children: [
+                               RatingBar.builder(
+                                itemSize: 25,
+                                initialRating: 3,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                                itemBuilder: (context, _) => Icon(
+                                  Icons.star,size: 5,
+                                  color: Color(0xffF3603F),
                                 ),
-                                primary: Color(0xff08BA64)
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
+                               Row(
+                                 
+                                 children: [
+                                   CircleAvatar(
+                                     radius: 25,
+                                     backgroundColor: Colors.white,
+                                     child: Image.asset("assets/youtube.png",)
+                                     ),
+                                     SizedBox(width: 10,),
+                                    CircleAvatar(
+                                      radius: 25,
+                                      backgroundColor: Colors.white,
+                                      child: Image.asset("assets/youtube_with.png",)
+                                 ),
+                                 ],
+                               ),
+                             ],
+                           ) ,
+                           Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Text(
+                                 "Tasty Restaurant",
+                                 style: TextStyle(
+                                   fontSize: 20
+                                 ),
+                               ),
+                               SizedBox(height: 10,),
+                               Row(
+                                 children: [
+                                   Icon(Icons.location_on,color: Colors.grey),
+                                   Text(
+                                     "Dhaka",
+                                     style: TextStyle(
+                                       fontSize: 20,
+                                       color: Colors.grey
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ],
+                           ),
+                           SizedBox(height: 20,),
+                           Text(
+                              "Aura Raja Ampat Dive Resort is a hotel in a good neighborhood, which is located at...",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey
                               ),
                             ),
+                            TextButton(
+                              onPressed: (){}, 
+                              child: Text(
+                                "Read More..",
+                                 style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey
+                              ),
+                              )
                             ),
                             SizedBox(height: 25,),
-                             Divider(
-                           thickness: 2,
-                         ),
-                         SizedBox(height: 25,),
-                         Image.asset("assets/burger.png",fit: BoxFit.fitWidth,)
-                  
-                        ],
+                           Divider(
+                             thickness: 2,
+                           ),
+                            SizedBox(height: 25,),
+                           Row(
+                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                             children: [
+                               Column(
+                                 children: [
+                                   SizedBox(
+                                     width: 80,
+                                     height: 65,
+                                     child: ElevatedButton(
+                                       onPressed: (){}, 
+                                       child: Icon(Icons.menu_book,color: Colors.grey,),
+                                       style: ElevatedButton.styleFrom(
+                                         shape: RoundedRectangleBorder(
+                                           borderRadius:BorderRadius.circular(16), 
+                                          ),
+                                          primary: Colors.white
+                                       ),
+                                      ),
+                                   ),
+                                   Text("Menu")
+                                 ],
+                               ),
+                               Column(
+                                 children: [
+                                   SizedBox(
+                                     width: 80,
+                                     height: 65,
+                                     child: ElevatedButton(
+                                       onPressed: (){}, 
+                                       child: Icon(Icons.phone,color: Colors.grey,),
+                                       style: ElevatedButton.styleFrom(
+                                         shape: RoundedRectangleBorder(
+                                           borderRadius:BorderRadius.circular(16) 
+                                          ),
+                                          primary: Colors.white
+                                       ),
+                                      ),
+                                   ),
+                                   Text("Contact")
+                                 ],
+                               ),
+                               Column(
+                                 children: [
+                                   SizedBox(
+                                     width: 80,
+                                     height: 65,
+                                     child: ElevatedButton(
+                                       onPressed: (){
+                                         
+                                       }, 
+                                       child: Image.asset("assets/online_order.png"),
+                                       style: ElevatedButton.styleFrom(
+                                         shape: RoundedRectangleBorder(
+                                           borderRadius:BorderRadius.circular(16) 
+                                          ),
+                                          primary: Colors.white
+                                       ),
+                                      ),
+                                   ),
+                                   Text("Order Online")
+                                 ],
+                               ),
+                             ],
+                           ),
+                            SizedBox(height: 25,),
+                                Container(
+                                width: double.infinity,
+                                height: 56,
+                               
+                                child: ElevatedButton(
+                                onPressed: (){
+                                 Navigator.push(context, MaterialPageRoute(builder: (_)=>VendorDetailsScreen()));
+                                }, 
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                  
+                                    Text(
+                                      "Claim 50% Discount",
+                                      style: TextStyle(
+                                        fontSize: 18
+                                      ),
+                                    ),
+                                    SizedBox(width: 10,),
+                                    Icon(Icons.arrow_forward)
+                                  ],
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
+                                  primary: Color(0xff08BA64)
+                                ),
+                              ),
+                              ),
+                              SizedBox(height: 25,),
+                               Divider(
+                             thickness: 2,
+                           ),
+                           SizedBox(height: 25,),
+                           Image.asset("assets/burger.png",fit: BoxFit.fitWidth,)
+                    
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              )
+              ),
+               
+               SizedBox(height: 10,)
             
           ],
         ),

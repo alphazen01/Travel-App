@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class PersonScreen extends StatelessWidget {
   const PersonScreen({ Key? key }) : super(key: key);
 
-    @override
+      @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffE5E5E5),
@@ -200,7 +200,7 @@ class PersonScreen extends StatelessWidget {
                                      ),
                                      SizedBox(height: 10,),
                                    SizedBox(
-                                     width: 147,
+                                     width: 160,
                                      height: 50,
                                      child: ElevatedButton(
                                        onPressed: (){}, 
@@ -280,7 +280,7 @@ class PersonScreen extends StatelessWidget {
                           ),
                          Container(
                            width: double.infinity,
-                           height: 240,
+                           height: MediaQuery.of(context).size.height/2.2,
                            color: Color(0xffE5E5E5),
                            child: ListView.separated(
                              itemBuilder: (BuildContext,index){
@@ -298,9 +298,11 @@ class PersonScreen extends StatelessWidget {
                              }, 
                              itemCount: 10
                             ),
-                         )
+                         ),
+                         
                             ],
                           ),
+                          
                           
                           
                           
@@ -308,7 +310,8 @@ class PersonScreen extends StatelessWidget {
                     
                     
                     
-                        )
+                        ),
+                        
                       ],
                     ),
                   )

@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class CustomContainerRoom extends StatelessWidget {
@@ -21,7 +23,7 @@ class CustomContainerRoom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 120,
+      height: 125,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16)
@@ -37,38 +39,45 @@ class CustomContainerRoom extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width/2.7,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                        Text(
+                       Text(
                        "$tlabel",
                        style: TextStyle(
                          fontSize: 20,
                          fontWeight: FontWeight.w700
                        ),
                      ),
-                     Text(
-                       "A luxurious 2 bed room. With amazing services and luxury...",textAlign: TextAlign.left,
-                       style: TextStyle(
-                         fontSize: 16,
-                         color: Colors.grey
-                       ),
-                     ),
-                      Row(
-                       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(
-                               "$bedLabel",
-                               style: TextStyle(
-                              
-                               ),
-                             ),
+                           
+                         Text(
+                           "A luxurious 2 bed room. With amazing services and luxury...",textAlign: TextAlign.left,
+                           style: TextStyle(
+                             fontSize: 16,
+                             color: Colors.grey,
+                            overflow: TextOverflow.ellipsis
+                           ),
+                         ),
+                          Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
                               Text(
-                               "Night Stay",
-                               style: TextStyle(
-                                
-                               ),
-                             ),
+                                   "$bedLabel",
+                                   style: TextStyle(
+                                  
+                                   ),
+                                 ),
+                                  Text(
+                                   "Night Stay",
+                                   style: TextStyle(
+                                    
+                                   ),
+                                 ),
+                            ],
+                          ),
+                          SizedBox(height: 5,)
                         ],
                       ),
                     ],

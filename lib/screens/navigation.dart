@@ -1,12 +1,13 @@
-import 'package:demo/screens/home.dart';
-import 'package:demo/screens/offer_page.dart';
-import 'package:demo/screens/person.dart';
+import 'package:demo/screens/home/home.dart';
+import 'package:demo/screens/restaurant%20_details/offer/offer_page.dart';
+import 'package:demo/screens/user_about/person.dart';
+
 import 'package:demo/screens/restaurant%20_details/vendor_details.dart';
 import 'package:demo/screens/search.dart';
-import 'package:demo/screens/welcome/login.dart';
-import 'package:demo/screens/welcome/profile.dart';
-import 'package:demo/screens/welcome/social_logo.dart';
-import 'package:demo/screens/welcome/welcome.dart';
+import 'package:demo/screens/auth/login.dart';
+import 'package:demo/screens/user_about/profile.dart';
+import 'package:demo/screens/auth/social_logo.dart';
+import 'package:demo/screens/home/welcome.dart';
 import 'package:flutter/material.dart';
 
 class NavigationScreen extends StatefulWidget {
@@ -18,12 +19,12 @@ class NavigationScreen extends StatefulWidget {
 
 class _NavigationScreenState extends State<NavigationScreen> {
  
-  int selectedIndex=0;
+  int selectedIndex=4;
   List<Widget>screens=[
     HomeScreen(),
     SearchScreen(),
     OfferScreen(),
-    SocialLogoScreen(),
+    ProfileScreen(),
     PersonScreen()
     
     
