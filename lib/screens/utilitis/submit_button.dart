@@ -8,14 +8,20 @@ class SubmitButton extends StatelessWidget {
     required this.onTap,
     this.icon,
     this.size,
+    this.iconSize,
     this.tcolor,
+    this.iconColor,
+    this.borderRadius
   }) : super(key: key);
   String title;
   Color color;
+  Color? iconColor;
   Color? tcolor;
   IconData? icon;
   double? size;
+  double? iconSize;
   VoidCallback onTap;
+  BorderRadiusGeometry? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +38,13 @@ class SubmitButton extends StatelessWidget {
             ),
           ),
           SizedBox(width: 5,),
-          // Icon(icon)
+          // Icon(icon,color: iconColor,size:iconSize ,)
         ],
       ),
       
       style: ElevatedButton.styleFrom(
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(25),
+      borderRadius: BorderRadius.circular(15)
     ),
     primary: color
         ),

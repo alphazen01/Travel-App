@@ -14,6 +14,7 @@ import 'package:demo/screens/auth/login.dart';
 import 'package:demo/screens/user_about/profile.dart';
 import 'package:demo/screens/auth/social_logo.dart';
 import 'package:demo/screens/home/welcome.dart';
+import 'package:demo/widgets/custom_claimed.dart';
 import 'package:demo/widgets/custom_contact.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home: OfferScreen(),
+      home: SplashScreen(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:demo/screens/navigation.dart';
 import 'package:demo/screens/user_about/profile.dart';
 import 'package:demo/screens/utilitis/button_color.dart';
 import 'package:demo/screens/utilitis/custom_textfield.dart';
@@ -121,33 +122,24 @@ class _LogInScreenState extends State<LogInScreen> {
                           width: 150,
                           height: 50,
                           child: SubmitButton(
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                            builder: (_) => NavigationScreen()));
+                            },
                             title: "Continue",size: 16, 
                             color: ButtonColor.submitButtonColor,
                              
                             )
-                          
-                          
-                          
-                          
-                          
-                          // ElevatedButton(
-                          //   onPressed: () {
-                          //     signUp();
-                          //   },
-                          //   child: Text("Continue"),
-                          //   style: ElevatedButton.styleFrom(
-                          //       shape: RoundedRectangleBorder(
-                          //         borderRadius: BorderRadius.circular(25),
-                          //       ),
-                          //       primary: Color(0xff08BA64)),
-                          // ),
                         ),
                         TextButton(
                           onPressed: () {},
                           child: Text(
                             "Forgot password?",
-                            style: TextStyle(color: Color(0xff08BA64)),
+                            style: TextStyle(color: Color(0xff08BA64),
+                            fontSize: 18
+                            ),
                           ),
                         )
                       ],

@@ -15,6 +15,28 @@ class VendorDetailsScreen extends StatefulWidget {
 }
 
 class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
+
+
+List<String>image = [
+    
+    "assets/couple_room.png",
+    "assets/single_room.png",
+    "assets/couple_room.png",
+    "assets/single_room.png",
+
+
+  ];
+  List<String>title= [
+    
+    "Couple Room",
+    "Single Room",
+    "Couple Room",
+    "Single Room",
+
+  ];
+
+
+
    var bottomSheetController;
 
    bool isOpen = false;
@@ -268,9 +290,16 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
                            ],
                          ),
                          SizedBox(height: 10,),
+
+
+
+
+
+
+
                         Container(
                         width: double.infinity,
-                        height: 250,
+                        height: 260,
                          decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16)
@@ -288,16 +317,23 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
                                 amountLabel: "6,000 tk", 
                                 discountLabel: "12,000 tk", 
                                 parcentageLabel: "50%", 
-                                bedLabel: "2 Bed"
+                                bedLabel: "2 Bed",
+                                shift: "Night Stay",
+                                details: "A luxurious 2 bed room. With amazing services and luxury...",
+                                available_offer:"available_offer" ,
                               ),
                             ),
+                            SizedBox(height: 10,),
                             CustomContainerRoom(
                            image: "assets/single_room.png", 
                            tlabel: "Single Room", 
                            amountLabel: "4,000 tk", 
                            discountLabel: "7,000 tk", 
                            parcentageLabel: "40%", 
-                           bedLabel: "1 Bed"
+                           bedLabel: "1 Bed",
+                           shift: "Night Stay",
+                           details: "A luxurious 2 bed room. With amazing services and luxury...",
+                           available_offer:"available_offer" ,
                           ),
                             ],
                           ),
@@ -378,28 +414,24 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
                 ),
                Expanded(
                  child: ListView.separated(
-                   itemCount: 5,
+                   itemCount: image.length,
                    itemBuilder: (BuildContext, index){
                      return Column(
                        children: [
                          
                          CustomContainerRoom(
-                            image: "assets/couple_room.png", 
-                            tlabel: "Couple Room", 
+                            image: image[index], 
+                            tlabel: title[index], 
                             amountLabel: "6,000 tk", 
                             discountLabel: "12,000 tk", 
                             parcentageLabel: "50%", 
-                            bedLabel: "2 Bed"
+                            bedLabel: "2 Bed",
+                            shift: "Night Stay",
+                            details: "A luxurious 2 bed room. With amazing services and luxury...",
+                            available_offer: "available offer",
                           ),
                          SizedBox(height: 10,),
-                         CustomContainerRoom(
-                            image: "assets/single_room.png", 
-                            tlabel: "Single Room", 
-                            amountLabel: "4,000 tk", 
-                            discountLabel: "7,000 tk", 
-                            parcentageLabel: "40%", 
-                            bedLabel: "1 Bed"
-                         ),
+                        
                        ],
                      );
                      
@@ -418,7 +450,6 @@ class _VendorDetailsScreenState extends State<VendorDetailsScreen> {
   }
   _showModalBottomSheetDiscount(){
     showModalBottomSheet(
-      
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft:Radius.circular(20),

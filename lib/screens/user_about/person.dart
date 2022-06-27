@@ -1,8 +1,20 @@
+import 'package:demo/screens/utilitis/button_color.dart';
+import 'package:demo/screens/utilitis/submit_button.dart';
 import 'package:demo/widgets/custom_container_room.dart';
 import 'package:flutter/material.dart';
 
 class PersonScreen extends StatelessWidget {
-  const PersonScreen({ Key? key }) : super(key: key);
+   PersonScreen({ Key? key }) : super(key: key);
+  List<String>title = [
+    "Couple Room x2",
+    "Single Room x3"
+  ];
+  List<String>image = [
+    
+    "assets/couple_room.png",
+    "assets/single_room.png",
+
+  ];
 
       @override
   Widget build(BuildContext context) {
@@ -19,11 +31,6 @@ class PersonScreen extends StatelessWidget {
                    height: 260,
                    child: Image.asset("assets/person_back.jpeg",fit: BoxFit.fitWidth,)
                    ),
-                 
-                 
-                
-                 
-        
                 ],
               ),
               Transform.translate(
@@ -76,7 +83,7 @@ class PersonScreen extends StatelessWidget {
                                         Transform.translate(
                                           offset: Offset(65, 60),
                                           child: CircleAvatar(
-                                           radius: 5,
+                                           radius: 7,
                                            backgroundColor: Color(0xff08BA64),
                                            ),
                                         ),
@@ -202,18 +209,12 @@ class PersonScreen extends StatelessWidget {
                                    SizedBox(
                                      width: 160,
                                      height: 50,
-                                     child: ElevatedButton(
-                                       onPressed: (){}, 
-                                       child: Text("Buy Subscription"),
-                                       style: ElevatedButton.styleFrom(
-                                         primary: Color(0xff08BA64),
-                                         shape:RoundedRectangleBorder(
-                                           borderRadius: BorderRadius.circular(40)
-                                         )
-                                       ),
-                                      ),
+                                     child: SubmitButton(
+                                      title: "Buy Subscription",size: 16, 
+                                      color: ButtonColor.submitButtonColor, 
+                                      onTap: (){}
+                                    )
                                    )
-                                  
                                    ],
                                  ),
                                
@@ -283,20 +284,24 @@ class PersonScreen extends StatelessWidget {
                            height: MediaQuery.of(context).size.height/2.2,
                            color: Color(0xffE5E5E5),
                            child: ListView.separated(
+                            itemCount: title.length,
                              itemBuilder: (BuildContext,index){
                                return CustomContainerRoom(
-                                    image: "assets/single_room.png", 
-                                    tlabel: "Single Room", 
+                                    image: image[index], 
+                                    tlabel: title[index],color: Colors.grey, 
                                     amountLabel: "4,000 tk", 
-                                    discountLabel: "7,000 tk", 
+                                    discountLabel: "", 
                                     parcentageLabel: "40%", 
-                                    bedLabel: "1 Bed"
+                                    bedLabel: "12 Dec",
+                                    shift: "Pending",
+                                    details: "Seagull Hotel",
+                                    available_offer:"" ,
                                 );
                              }, 
                              separatorBuilder:  (BuildContext,index){
                                return SizedBox(height: 15,);
                              }, 
-                             itemCount: 10
+                             
                             ),
                          ),
                          

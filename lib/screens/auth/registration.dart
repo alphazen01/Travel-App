@@ -1,3 +1,5 @@
+import 'package:demo/screens/auth/login.dart';
+import 'package:demo/screens/navigation.dart';
 import 'package:demo/screens/utilitis/button_color.dart';
 import 'package:demo/screens/utilitis/social_logo_button.dart';
 import 'package:demo/screens/utilitis/custom_textfield.dart';
@@ -39,127 +41,165 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               padding: EdgeInsets.only(top: 30),
               width: double.infinity,
               height: MediaQuery.of(context).size.height,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                 Image.asset("assets/travel_logo.png"),
-                Column(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                      Text(
-                      "Email sign up",
-                      style: TextStyle(
-                        fontSize: 32,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700
+                   Image.asset("assets/travel_logo.png"),
+                  Column(
+                    children: [
+                        Text(
+                        "Email sign up",
+                        style: TextStyle(
+                          fontSize: 32,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700
+                        ),
                       ),
+                          Divider(
+                      color: Colors.white.withOpacity(0.5),
+                      thickness: 2,
+                      indent: 180,
+                      endIndent: 180,
                     ),
-                        Divider(
-                    color: Colors.white.withOpacity(0.5),
-                    thickness: 2,
-                    indent: 180,
-                    endIndent: 180,
-                  ),
-                   SizedBox(height: 49,),
-                  Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Column(
-                        children: [
-                          CustomTextfield(
-                            readOnly: false,
-                            obscureText: false,
-                            title:"Full Name" ,
-                            Controller: nameController, 
-                            color: TextfieldColor.textfieldColor
+                     SizedBox(height: 49,),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          children: [
+                            CustomTextfield(
+                              readOnly: false,
+                              obscureText: false,
+                              title:"Full Name" ,
+                              Controller: nameController, 
+                              color: TextfieldColor.textfieldColor
+                              ),
+                               SizedBox(
+                              height: 15,
+                            ),
+                            CustomTextfield(
+                              readOnly: false,
+                              obscureText: false,
+                              title: "Your email address",
+                              Controller: emailController,
+                              color: TextfieldColor.textfieldColor
                             ),
                              SizedBox(
-                            height: 15,
-                          ),
-                          CustomTextfield(
-                            readOnly: false,
-                            obscureText: false,
-                            title: "Your email address",
-                            Controller: emailController,
-                            color: TextfieldColor.textfieldColor
-                          ),
-                           SizedBox(
-                            height: 15,
-                          ),
-                          IntlPhoneField(
-                            controller: phoneController,
-                            style: TextStyle(color: Colors.white),
-                            initialCountryCode: 'BD',
-                            onChanged: (phone) {
-                                print(phone.completeNumber);
-                            },
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Color(0xffF7F7F7).withOpacity(0.4),
-                            
-                              hintText: " Phone  ",
-                                hintStyle: TextStyle(
-                                color: Colors.white,
+                              height: 15,
+                            ),
+                            IntlPhoneField(
+                              controller: phoneController,
+                              style: TextStyle(color: Colors.white),
+                              initialCountryCode: 'BD',
+                              onChanged: (phone) {
+                                  print(phone.completeNumber);
+                              },
+                              decoration: InputDecoration(
+                                filled: true,
+                                fillColor: Color(0xffF7F7F7).withOpacity(0.4),
+                              
+                                hintText: " Phone  ",
+                                  hintStyle: TextStyle(
+                                  color: Colors.white,
+                                ),
+                                
+                                  border: OutlineInputBorder(
+                                    
+                                borderRadius: BorderRadius.circular(27.5),
                               ),
-                              
-                                border: OutlineInputBorder(
-                                  
-                              borderRadius: BorderRadius.circular(27.5),
+                                disabledBorder: InputBorder.none,
+                                
+                            focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(),
+                              borderRadius: BorderRadius.circular(25.0),
                             ),
-                              disabledBorder: InputBorder.none,
-                              
-                          focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(),
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                              
+                                
+                              ),
                             ),
-                          ),
-                           CustomTextfield(
-                                Controller: passwordController, 
-                                color: ButtonColor.socialLogoButtonColor, 
-                                title: "Password", 
-                                obscureText:!istap , 
-                                readOnly: false,
-                                icon: InkWell(
-                                    onTap: _togglePasswordView,
-                                    child: Icon(
-                                      istap
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
-                                      color: Colors.white,
+                             CustomTextfield(
+                                  Controller: passwordController, 
+                                  color: ButtonColor.socialLogoButtonColor, 
+                                  title: "Password", 
+                                  obscureText:!istap , 
+                                  readOnly: false,
+                                  icon: InkWell(
+                                      onTap: _togglePasswordView,
+                                      child: Icon(
+                                        istap
+                                            ? Icons.visibility
+                                            : Icons.visibility_off,
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  ),
-                              ),
-                           SizedBox(
-                            height: 15,
+                                ),
+                             SizedBox(
+                              height: 15,
+                            ),
+                            CustomTextfield(
+                              readOnly: false,
+                              obscureText: false,
+                              Controller: confirmPasswordController, 
+                              color: TextfieldColor.textfieldColor, 
+                              title: "Confirm password"
+                            )
+                          ],
+                        ),
+                      ),
+                    SizedBox(height: 30,),
+                    SizedBox(
+                      width: 150,
+                      height: 50,
+                      child:  SubmitButton(
+                        onTap: (){
+                          Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => NavigationScreen()));
+                        },
+                       title: "Continue",size: 18,
+                       color:ButtonColor.submitButtonColor ,
+                       icon: Icons.arrow_forward,iconColor: Colors.white, 
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 25),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Already have an account?",
+                             style: TextStyle(
+                             fontSize: 18,
+                             color: Colors.white
                           ),
-                          CustomTextfield(
-                            readOnly: false,
-                            obscureText: false,
-                            Controller: confirmPasswordController, 
-                            color: TextfieldColor.textfieldColor, 
-                            title: "Confirm password"
-                          )
+                          ),
+                          TextButton(
+                      onPressed: (){
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => LogInScreen()));
+                      }, 
+                      child:  Text(
+                          "Log in",
+                          style: TextStyle(
+                            color: Color(0xff08BA64),
+                            fontSize: 18
+                          ),
+                        ),
+                  )
                         ],
                       ),
                     ),
-                  SizedBox(height: 30,),
-                  SizedBox(
-                    width: 150,
-                    height: 50,
-                    child:  SubmitButton(
-                      onTap: (){},
-                     title: "Continue",
-                     color:ButtonColor.submitButtonColor , 
-                    ),
+                    SizedBox(height: 20,)
+                    
+                           
+                    
+                    ],
                   ),
-                  SizedBox(
-                    height: 10,
-                  )
                   
+                              
                   ],
                 ),
-                            
-                ],
               ),
             ),
           ),
