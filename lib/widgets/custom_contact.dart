@@ -41,120 +41,25 @@ class CustomContact extends StatelessWidget {
               color: Colors.grey,
             ),
            ),
-           SizedBox(height: 20,),
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: ElevatedButton(
-              onPressed: (){}, 
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    
-                    children: [
-                      Image.asset("assets/facebook_white.png",scale: 1,),
-                      SizedBox(width: 15,),
-                      Text(
-                        "Send Email",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey,
-                        ),
-                       ),
-                      
-                    ],
-                  ),
-                   IconButton(
-                     onPressed: (){}, 
-                     icon: Icon(Icons.arrow_forward_ios,color:Color(0xff08BA64))
-                    )
-                ],
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16)
-                )
-              ),
-            ),
-          ),
           SizedBox(height: 10,),
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: ElevatedButton(
-              onPressed: (){}, 
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    
-                    children: [
-                      Image.asset("assets/facebook_white.png",scale: 1,),
-                      SizedBox(width: 15,),
-                      Text(
-                        "Send Email",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey,
-                        ),
-                       ),
-                      
-                    ],
-                  ),
-                   IconButton(
-                     onPressed: (){}, 
-                     icon: Icon(Icons.arrow_forward_ios,color:Color(0xff08BA64))
-                    )
-                ],
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16)
-                )
-              ),
-            ),
-          ),
+          ContactButton(
+            title: "Facebook Page",
+            icon: Icons.arrow_forward_ios ,
+            image: "assets/facebook_white.png",
+           ),
           SizedBox(height: 10,),
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: ElevatedButton(
-              onPressed: (){}, 
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    
-                    children: [
-                      Image.asset("assets/facebook_white.png",scale: 1,),
-                      SizedBox(width: 15,),
-                      Text(
-                        "Send Email",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey,
-                        ),
-                       ),
-                      
-                    ],
-                  ),
-                   IconButton(
-                     onPressed: (){}, 
-                     icon: Icon(Icons.arrow_forward_ios,color:Color(0xff08BA64))
-                    )
-                ],
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16)
-                )
-              ),
-            ),
-          ),
+          ContactButton(
+            title: "Visit Website",
+            icon: Icons.arrow_forward_ios ,
+            image: "assets/world.png",
+           ),
+            SizedBox(height: 10,),
+          ContactButton(
+            title: "Send Email",
+            icon: Icons.arrow_forward_ios ,
+            image: "assets/world.png",
+           ),
+         
           SizedBox(height: 25,),
           Divider(
             thickness: 1.5,
@@ -171,15 +76,15 @@ class CustomContact extends StatelessWidget {
         onPressed: (){
           _showModalBottomSheetClaimed(BuildContext,context);
         }, 
-        icon: Icon(Icons.arrow_back,color:Color(0xff08BA64),), 
+        icon: Icon(Icons.arrow_back,color:Colors.white), 
         label: Text(
           "Claim Discount",
           style: TextStyle(
-            color: Color(0xff08BA64)
+            color: Colors.white
           ),
           ),
         style: ElevatedButton.styleFrom(
-          primary: Color(0xffD0D0D0).withOpacity(0.3),
+          primary: Color(0xff08BA64),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)
           )
@@ -230,6 +135,59 @@ class CustomContact extends StatelessWidget {
         builder: (context) {
           return CustomClaimed();
         },
+    );
+  }
+}
+
+class ContactButton extends StatelessWidget {
+   ContactButton({
+    Key? key,
+    required this.title,
+    required this.image,
+    required this.icon
+  }) : super(key: key);
+  String title;
+  String image;
+  IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 50,
+      child: ElevatedButton(
+       onPressed: (){}, 
+       child: Row(
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         children: [
+           Row(
+             
+             children: [
+               Image.asset("$image",scale: 1,),
+               SizedBox(width: 15,),
+               Text(
+                 "$title",
+                 style: TextStyle(
+                   fontSize: 20,
+                   color: Colors.grey,
+                 ),
+                ),
+               
+             ],
+           ),
+            IconButton(
+              onPressed: (){}, 
+              icon: Icon(icon,color: Colors.grey,size: 20,)
+             )
+         ],
+       ),
+       style: ElevatedButton.styleFrom(
+         primary: Colors.white,
+         shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.circular(16)
+         )
+       ),
+              ),
     );
   }
 }

@@ -22,22 +22,22 @@ class _SearchScreenState extends State<SearchScreen> {
 bool isTap =false;
 
   TextEditingController _dobController = TextEditingController();
-  List<Widget>image=[
-    Image.asset("assets/couple_room.png"),
-    Image.asset("assets/single_room.png"),
-    Image.asset("assets/couple_room.png"),
-    Image.asset("assets/single_room.png"),
-    Image.asset("assets/couple_room.png"),
-    Image.asset("assets/single_room.png"),
+  List<String>image=[
+    "assets/couple_room.png",
+    "assets/single_room.png",
+    "assets/couple_room.png",
+    "assets/single_room.png",
+    "assets/couple_room.png",
+    "assets/single_room.png",
   ];
   
   List<String>hotelName =[
     "Seagull Hotel",
     "VistaBay Resort",
-    "AbcHote Service",
+    "Abc Hotel Service",
     "Seagull Hotel",
     "VistaBay Resort",
-    "AbcHote Service",
+    "Abc Hotel Service",
     
    
   ];
@@ -83,6 +83,8 @@ bool isTap =false;
     "Resort",
     "Resort",
   ];
+
+
   
 
 
@@ -117,7 +119,7 @@ bool isTap =false;
                    child: Image.asset("assets/restaurent.png",fit: BoxFit.fitWidth,)
                    ),
                     Positioned(
-                      top: 90,
+                      top: 150,
                       left: 10,
                       child: Text(
                       """Where do 
@@ -129,32 +131,37 @@ you wanna go?""",
                       ),
                       ),
                     ),
-                  
-                     
-                   Positioned(
-                    top: 90,
-                    right: 20,
-                    child: Column(
-                      children: [
+                     Positioned(
+                      top: 150,
+                      right: 10,
+                       child: Column(
+                        children: [
                         OutlinedButton(
-                          onPressed: (){}, 
-                          child: Image.asset("assets/rainy.png"),
-                          style: ElevatedButton.styleFrom(
-                            side: BorderSide(color: Colors.white),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12)
-                            )
-                          ),
+                        onPressed: (){}, 
+                        child: Image.asset("assets/rainy.png"),
+                        style: ElevatedButton.styleFrom(
+                          side: BorderSide(color: Colors.white),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)
+                          )
                         ),
-                        Text(
-                          "Rainy",
-                          style: TextStyle(
-                            color: Colors.white
-                          ),
-                        )
-                      ],
-                    )
-                  ),
+                                         ),
+                                         Text(
+                        "Rainy",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                                         )
+                        ],
+                                         ),
+                     ),
+                  SizedBox(width: 3,)
+                     
+                  //  Positioned(
+                  //   top: 150,
+                  //   right: 20,
+                  //   child:
+                  // ),
                  
                 ],
               ),
@@ -412,120 +419,19 @@ you wanna go?""",
                         color:Colors.white,
                         borderRadius: BorderRadius.circular(16)
                         ),
-                        child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          image[index],
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 5),
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: MediaQuery.of(context).size.width/2.7,
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                        Text(
-                                      hotelName[index],
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w700
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(Icons.location_on),
-                                        Text(
-                                          location[index],
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            color: Colors.grey
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                      Row(
-                                        children: [
-                                          Text(
-                                              place[index],
-                                              style: TextStyle(
-                                              
-                                              ),
-                                            ),
-                                            SizedBox(width: 10,),
-                                              Text(
-                                          "Restaurent",
-                                          style: TextStyle(
-                                            
-                                          ),
-                                        ),
-                                        ],
-                                      ),
-                                        
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Stack(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 50),
-                                    child: Image.asset("assets/discount_badge.png",scale: 1.1,),
-                                  ),
-                                  Positioned(
-                                    top: 5,
-                                    left: 50,
-                                    child: Text(
-                                      "50%",
-                                      style: TextStyle(
-                                        // fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                                Column(
-                              children: [
-                                Text(
-                                  parcentageLabel[index],
-                                  style: TextStyle(
-                                    // fontWeight: FontWeight.w700,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Text(
-                            afterPrice[index],
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xff08BA64)
-                            ),
-                          ),
-                            Text(
-                            beforePrice[index],
-                            style: TextStyle(
-                              fontSize: 16,
-                                decoration: TextDecoration.lineThrough,
-                                color: Color(0xff08BA64)
-                            ),
-                          ),
-                              ],
-                            )
-                            ],
-                          ),
-                          
-                          
-                        ],
-                                          ),
-                                          
-                                        );  
+                        child: CustomContainerRoom(
+                          image: image[index], 
+                          tlabel: hotelName[index], 
+                          amountLabel: afterPrice[index], 
+                          discountLabel: beforePrice[index], 
+                          parcentageLabel: "50%", 
+                          bedLabel: "Hotel", 
+                          shift: "Restaurant",
+                          icon: Icons.location_on,
+                          details:location[index] ,
+                          available_offer: "available offer",
+                        )
+                      );  
                    },
                    separatorBuilder: (BuildContext,index){
                      return SizedBox(height: 10,);

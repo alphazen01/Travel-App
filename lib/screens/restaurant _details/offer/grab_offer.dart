@@ -9,11 +9,10 @@ class GrabOffer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Container(
-          color: Colors.white,
           child: Column(
            
             children: [
-      Text(
+        Text(
           "Grab the Offer",
           style: TextStyle(
             fontSize: 20,

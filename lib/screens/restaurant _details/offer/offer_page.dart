@@ -9,39 +9,25 @@ class OfferScreen extends StatefulWidget {
 }
 
 class _OfferScreenState extends State<OfferScreen> {
-  bool isTap1=false;
-  bool isTap2=false;
-  bool isTap3=false;
-  bool isTap4=false;
+
 
 
 
 
   List <String>image = [
-    "assets/segull.png",
-    "assets/vistabay.png",
-    "assets/abc.png",
+    "assets/16taka.png",
+    "assets/surprise_gift.png",
+    "assets/valentines.png",
   ];
   List<String>title= [
-    "Seagull Hotel",
-    "VistaBay Resort",
-    "Abc Hotel",
+    "16 Taka Ticket",
+    "Surprise Gift",
+    "Valentines Special",
   ];
-   List<String>location= [
-    "Cox’s Bazaar",
-    "Chattogram",
-    "Dhaka",
-  ];
-   List<String>category1= [
-    "Hotel",
-    "Resort",
-    "Resort",
-  ];
-   List<String>category2= [
-    "Restaurant",
-    "Restaurant",
-    "Restaurant",
-  ];
+  
+   
+   
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -108,154 +94,71 @@ class _OfferScreenState extends State<OfferScreen> {
                 ],
               ),
               SizedBox(height: 20,),
-             Container(
-                  height: 90,
-                  color: Color(0xffE5E5E5),
-                  child: ListView(
-                    
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                       Column(
-                         children: [
-                           SizedBox(
-                            height: 65,
-                            width: 85,
-                            child: ElevatedButton(
-                              onPressed: (){
-                               setState(() {
-                                isTap1=!isTap1;
-                                isTap2=false;
-                                isTap3=false;
-                                isTap4=false;
-                                // if (isTap1==false) {
-                                //   print("Yes");
-                                // }else{
-                                //   print("no");
-                                // }
-                               });
-                              }, 
-                              child: Image.asset("assets/hotel.png"),
-                              style: ElevatedButton.styleFrom(
-                                side:BorderSide(
-                                  color: isTap1==false?Colors.white:Color(0xff08BA64),
-                                   
-                                  width: 2
-                                ) ,
-                                  primary: Colors.white,
-                                  
-                                ),
+              Row(
+                children: [
+                 Expanded(
+                    child: SizedBox(
+                      height: 100,
+                      child: ElevatedButton(
+                        onPressed: (){}, 
+                        child: Column(
+                           mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.home,
+                              color: Color(0xff08BA64),
+                              size: 30,
                               ),
-                           ),
-                           Text(
-                             "Hotel/Resort",
-                             style: TextStyle(
+                            Text(
+                              "My Discounts",
+                              style: TextStyle(
                                 color: Colors.grey
                               ),
-                            ),
-                         ],
-                       ),
-                       SizedBox(width: 35,),
-                       Column(
-                         children: [
-                           SizedBox(
-                            height: 65,
-                            width: 85,
-                            child: ElevatedButton(
-                              onPressed: (){
-                                setState(() {
-                                isTap1=false;
-                                isTap2=!isTap2;
-                                isTap3=false;
-                                isTap4=false;
-                               });
-                              }, 
-                              child: Image.asset("assets/restaurant.png"),
-                              style: ElevatedButton.styleFrom(
-                                 side:BorderSide(
-                                  color: isTap2==false? Colors.white:Color(0xff08BA64),
-                                  width: 2
-                                ) ,
-                                  primary: Colors.white
-                                ),
-                              ),
-                           ),
-                           Text(
-                             "Restaurant",
-                             style: TextStyle(
-                                color: Colors.grey
-                              ),
-                            ),
-                         ],
-                       ),
-                      SizedBox(width: 35,),
-                        Column(
-                         children: [
-                           SizedBox(
-                            height: 65,
-                            width: 85,
-                            child: ElevatedButton(
-                              onPressed: (){
-                                 setState(() {
-                                isTap1=false;
-                                isTap2=false;
-                                isTap3=!isTap3;
-                                isTap4=false;
-                               });
-                              }, 
-                              child: Image.asset("assets/cruise.png"),
-                              style: ElevatedButton.styleFrom(
-                                 side:BorderSide(
-                                  color: isTap3==false? Colors.white:Color(0xff08BA64),
-                                  width: 2
-                                ) ,
-                                  primary: Colors.white
-                                ),
-                              ),
-                           ),
-                           Text(
-                             "Cruise",
-                             style: TextStyle(
-                                color: Colors.grey
-                              ),
-                            ),
-                         ],
-                       ),
-                      SizedBox(width: 35,),
-                        Column(
-                         children: [
-                           SizedBox(
-                            height: 65,
-                            width: 85,
-                            child: ElevatedButton(
-                              onPressed: (){
-                                 setState(() {
-                                isTap1=false;
-                                isTap2=false;
-                                isTap3=false;
-                                isTap4=!isTap4;
-                               });
-                              }, 
-                              child: Image.asset("assets/flight.png"),
-                              style: ElevatedButton.styleFrom(
-                                 side:BorderSide(
-                                  color: isTap4==false? Colors.white:Color(0xff08BA64),
-                                  width: 2
-                                ) ,
-                                  primary: Colors.white
-                                ),
-                              ),
-                           ),
-                           Text(
-                             "Flight",
-                             style: TextStyle(
-                                color: Colors.grey
-                              ),
-                            ),
-                         ],
-                       ),
-                    ],
+                            )
+                          ],
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xffFFFFFF),
+                         shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16)
+                         ) 
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(width: 15,),
+                   Expanded(
+                    child: SizedBox(
+                      height: 100,
+                      child: ElevatedButton(
+                        onPressed: (){}, 
+                        child: Column(
+                           mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.home,
+                              color: Color(0xff08BA64),
+                              size: 30,
+                              ),
+                            Text(
+                              "Pending Rewards",
+                              style: TextStyle(
+                                color: Colors.grey
+                              ),
+                            )
+                          ],
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xffFFFFFF),
+                         shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16)
+                         ) 
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 20,),
                Container(
                 width: 250,
@@ -297,151 +200,50 @@ class _OfferScreenState extends State<OfferScreen> {
                     children: [
                       AspectRatio(
                         aspectRatio:1 ,
-                      
                         child: Image.asset(image[index],scale: 2.9,fit: BoxFit.cover,)
                         ),
-                        
-                      Column(
+                      Row(
                         children: [
-                          SizedBox(height: 5,),
-                          Text(
-                        title[index],
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700
-                        ),
-                      ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Row(
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            width: MediaQuery.of(context).size.width/1.9,
+                            color: Color.fromRGBO(205, 254, 230, 0.35),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Container(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      
-                                    SizedBox(height: 15,),
-                                    Row(
-                                      children: [
-                                        Icon(Icons.location_on),
-                                        Text(
-                                          location[index],
-                                          style: TextStyle(
-                                            color: Colors.grey
-                                          ),
-                                        )
-                                       
-                                      ],
-                                    ),
-                                    SizedBox(height: 15,),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          category1[index],
-                                           style: TextStyle(
-                                            color: Colors.grey
-                                          ),
-                                        ),
-                                        SizedBox(width: 15,),
-                                        Text(
-                                         category2[index] ,
-                                           style: TextStyle(
-                                            color: Colors.grey
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                          
-                                    SizedBox(height: 15,),
-                                      RatingBar.builder(
-                                    itemSize: 20,
-                                    initialRating: 3,
-                                    minRating: 1,
-                                    direction: Axis.horizontal,
-                                    allowHalfRating: true,
-                                    itemCount: 5,
-                                    itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-                                    itemBuilder: (context, _) => Icon(
-                                      Icons.star,
-                                      color: Colors.orangeAccent,
-                                    ),
-                                    onRatingUpdate: (rating) {
-                                      print(rating);
-                                    },
-                                  ),
-                                      SizedBox(height: 15,),
-                                     
-                                        
-                                    ],
-                                  ),
-                                ),
-                                
+                                 Text(
+                              title[index],
+                              style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.grey
+                              ),
+                            ),
+                            Text(
+                              "Dhaka to Cox’s Bazaar bus ticket only for 16 taka.Spin the wheel to get this lucky discount!",
+                               style: TextStyle(
+                                color: Colors.grey
+                              ),
+                            ),
+                            Text(
+                              "16 December",
+                              style: TextStyle(
+                                color: Color(0xff08BA64),
+                                fontSize: 16
+                              ),
+                            )
+                               
+                                  
                               ],
                             ),
                           ),
+                          
                         ],
-                      ),
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                           
-                           Column(
-                        children: [
-                          Stack(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 50),
-                              child: Image.asset("assets/discount_badge.png",scale: 1.1,),
-                            ),
-                            Positioned(
-                              top: 5,
-                              left: 50,
-                              child: Text(
-                                "50%",
-                                style: TextStyle(
-                                  // fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Text(""),
-                          Text(
-                            "available offer",
-                            style: TextStyle(
-                              // fontWeight: FontWeight.w700,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          Text(
-                      "6,000 tk",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xff08BA64)
-                      ),
-                    ),
-                      Text(
-                      "12,000 tk",
-                      style: TextStyle(
-                        fontSize: 16,
-                          decoration: TextDecoration.lineThrough,
-                          color: Color(0xff08BA64)
-                      ),
-                    ),
-                        ],
-                      )
-                            ],
-                          ),
-                        )
-                     
-                      
+                      ), 
                       
                     ],
-                ) ,
+                   ) ,
                     );
                   }, 
                   separatorBuilder:  (BuildContext,index){
@@ -450,8 +252,6 @@ class _OfferScreenState extends State<OfferScreen> {
                 ),
               ),
               SizedBox(height: 10,),
-
-
               Container(
                 width: 250,
                 
@@ -481,4 +281,6 @@ class _OfferScreenState extends State<OfferScreen> {
       ),
     );
   }
+
+
 }

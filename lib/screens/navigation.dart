@@ -18,8 +18,13 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
+  bool isTap1=false;
+  bool isTap2=false;
+  bool isTap3=false;
+  bool isTap4=false;
+  bool isTap5=false;
  
-  int selectedIndex=4;
+  int selectedIndex=0;
   List<Widget>screens=[
     HomeScreen(),
     SearchScreen(),
@@ -44,7 +49,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
             // BottomNavigationBarItem(icon: Icon(Icons.person),label: "person"),
             BottomNavigationBarItem(
               
-               icon:Image.asset("assets/home.png",),
+               icon:Image.asset(
+                "assets/home.png",
+                ),
                 label: "Home",
                 ),
                  BottomNavigationBarItem(
@@ -70,7 +77,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
           type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,
           backgroundColor:Colors.white,
-          // selectedItemColor: Colors.green,
+          selectedItemColor: Colors.green,
           unselectedItemColor: Colors.black,
           // selectedIconTheme: IconThemeData(
           //   color: Colors.redAccent

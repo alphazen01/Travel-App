@@ -1,7 +1,8 @@
 import 'dart:ui';
 
-import 'package:demo/screens/restaurant%20_details/all_discount.dart';
 import 'package:demo/screens/restaurant%20_details/vendor_details.dart';
+import 'package:demo/screens/utilitis/button_color.dart';
+import 'package:demo/screens/utilitis/submit_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -120,7 +121,7 @@ class RestaurantScreen extends StatelessWidget {
                                 itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
                                 itemBuilder: (context, _) => Icon(
                                   Icons.star,size: 5,
-                                  color: Color(0xffF3603F),
+                                  color: Colors.orangeAccent,
                                 ),
                                 onRatingUpdate: (rating) {
                                   print(rating);
@@ -199,18 +200,19 @@ class RestaurantScreen extends StatelessWidget {
                                    SizedBox(
                                      width: 80,
                                      height: 65,
-                                     child: ElevatedButton(
-                                       onPressed: (){}, 
-                                       child: Icon(Icons.menu_book,color: Colors.grey,),
-                                       style: ElevatedButton.styleFrom(
-                                         shape: RoundedRectangleBorder(
-                                           borderRadius:BorderRadius.circular(16), 
-                                          ),
-                                          primary: Colors.white
-                                       ),
-                                      ),
+                                     child:SubmitButton(
+                                      title: "", 
+                                      color: Colors.white, 
+                                      onTap: (){},
+                                      icon:Icons.menu_book,iconColor: Colors.grey,iconSize: 30
+                                      )
                                    ),
-                                   Text("Menu")
+                                   Text(
+                                    "Menu",
+                                    style: TextStyle(
+                                      color: Colors.grey
+                                    ),
+                                  )
                                  ],
                                ),
                                Column(
@@ -218,18 +220,19 @@ class RestaurantScreen extends StatelessWidget {
                                    SizedBox(
                                      width: 80,
                                      height: 65,
-                                     child: ElevatedButton(
-                                       onPressed: (){}, 
-                                       child: Icon(Icons.phone,color: Colors.grey,),
-                                       style: ElevatedButton.styleFrom(
-                                         shape: RoundedRectangleBorder(
-                                           borderRadius:BorderRadius.circular(16) 
-                                          ),
-                                          primary: Colors.white
-                                       ),
-                                      ),
+                                     child:SubmitButton(
+                                      title: "", 
+                                      color: Colors.white, 
+                                      onTap: (){},
+                                      icon:Icons.phone,iconColor: Colors.grey,iconSize: 30,
+                                      )
                                    ),
-                                   Text("Contact")
+                                   Text(
+                                    "Contact",
+                                    style: TextStyle(
+                                      color: Colors.grey
+                                    ),
+                                  )
                                  ],
                                ),
                                Column(
@@ -244,13 +247,18 @@ class RestaurantScreen extends StatelessWidget {
                                        child: Image.asset("assets/online_order.png"),
                                        style: ElevatedButton.styleFrom(
                                          shape: RoundedRectangleBorder(
-                                           borderRadius:BorderRadius.circular(16) 
+                                           borderRadius:BorderRadius.circular(15) 
                                           ),
                                           primary: Colors.white
                                        ),
                                       ),
                                    ),
-                                   Text("Order Online")
+                                   Text(
+                                    "Order Online",
+                                    style: TextStyle(
+                                      color: Colors.grey
+                                    ),
+                                  )
                                  ],
                                ),
                              ],
@@ -260,39 +268,21 @@ class RestaurantScreen extends StatelessWidget {
                                 width: double.infinity,
                                 height: 56,
                                
-                                child: ElevatedButton(
-                                onPressed: (){
-                                 Navigator.push(context, MaterialPageRoute(builder: (_)=>VendorDetailsScreen()));
-                                }, 
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                  
-                                    Text(
-                                      "Claim 50% Discount",
-                                      style: TextStyle(
-                                        fontSize: 18
-                                      ),
-                                    ),
-                                    SizedBox(width: 10,),
-                                    Icon(Icons.arrow_forward)
-                                  ],
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16),
-                                  ),
-                                  primary: Color(0xff08BA64)
-                                ),
-                              ),
+                                child:SubmitButton(
+                                  title: "Claim 50% Discount",size: 18, 
+                                  color: ButtonColor.submitButtonColor,
+                                  onTap: (){},
+                                  icon:Icons.arrow_forward ,
+                                )
+                              
                               ),
                               SizedBox(height: 25,),
                                Divider(
                              thickness: 2,
                            ),
                            SizedBox(height: 25,),
-                           Image.asset("assets/burger.png",fit: BoxFit.fitWidth,)
-                    
+                           Image.asset("assets/burger.png",fit: BoxFit.fitWidth,),
+                           SizedBox(height: 50,),
                           ],
                         ),
                       ),

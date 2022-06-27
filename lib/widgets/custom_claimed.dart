@@ -29,7 +29,7 @@ class CustomClaimed extends StatelessWidget {
             endIndent: 160,
             ),
             SizedBox(height: 10,),
-            Image.asset("assets/facebook.png"),
+            Image.asset("assets/claim_photo.png"),
           Text(
             "You have successfully claimed the discount through DD Travel. To enjoy the discount, call Seagull Hotel and provide your discount id. You will get this amazing discount!",
             style: TextStyle(
@@ -51,7 +51,7 @@ class CustomClaimed extends StatelessWidget {
                height: 48,
                child: ElevatedButton.icon(
         onPressed: (){}, 
-        icon: Icon(Icons.arrow_back,color:Color(0xff08BA64),), 
+        icon: Icon(Icons.arrow_back,color:Colors.white,), 
         label: Text(
           "My Discounts",
           style: TextStyle(
@@ -59,7 +59,7 @@ class CustomClaimed extends StatelessWidget {
           ),
           ),
         style: ElevatedButton.styleFrom(
-          primary: Color(0xffD0D0D0).withOpacity(0.3),
+          primary: Color(0xff08BA64),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)
           )

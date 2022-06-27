@@ -9,6 +9,7 @@ import 'package:demo/screens/restaurant%20_details/restaurant_page.dart';
 import 'package:demo/screens/restaurant%20_details/vendor_details.dart';
 import 'package:demo/screens/search.dart';
 import 'package:demo/screens/auth/social_logo.dart';
+import 'package:demo/screens/utilitis/custom_textfield.dart';
 import 'package:demo/widgets/custom_container_room.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -21,6 +22,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController searchController = TextEditingController();
   bool onPressed=false;
   
   
@@ -50,8 +52,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(
-                          radius: 30,
+                        InkWell(
+                          onTap: (){
+                           Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => SocialLogoScreen()));
+                          },
+                          child: CircleAvatar(
+                            backgroundImage:NetworkImage("https://www.w3schools.com/howto/img_avatar.png"),
+                            radius: 30,
+                          ),
                         ),
                         SizedBox(width: 10,),
                         Column(
@@ -182,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 85,
                             child: ElevatedButton(
                               onPressed: (){
-                                 Navigator.push(context, MaterialPageRoute(builder: (_)=>VendorDetailsScreen()));
+                                 Navigator.push(context, MaterialPageRoute(builder: (_)=>SearchScreen()));
                               }, 
                               child: Image.asset("assets/hotel.png"),
                               style: ElevatedButton.styleFrom(

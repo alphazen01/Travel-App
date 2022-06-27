@@ -1,4 +1,5 @@
 import 'package:demo/screens/auth/login.dart';
+import 'package:demo/screens/auth/registration.dart';
 import 'package:demo/screens/utilitis/button_color.dart';
 import 'package:demo/screens/utilitis/social_logo_button.dart';
 import 'package:demo/screens/utilitis/submit_button.dart';
@@ -100,7 +101,12 @@ class SocialLogoScreen extends StatelessWidget {
                 ) 
               ),
                 TextButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => RegistrationScreen()));
+                  }, 
                   child:  Text(
                       "Skip for now",
                       style: TextStyle(
